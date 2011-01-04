@@ -1,0 +1,197 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*main container*/
+#container {
+	width:1048px;
+	height:auto;
+	margin-top:35px;
+	padding:5px;
+	margin-left:auto;
+	margin-right:auto;
+	-Moz-Border-Radius:4px;
+	-Webkit-Border-Radius:4px;
+}
+/*header style for site name*/
+#sitename {
+	background-color:#ccc;
+	margin:0px;
+	position:absolute;
+	top:0;
+	left:0;
+	width:99%;
+	padding:6px;
+	border-bottom:#aaa 2px inset;
+}
+#sitename span {
+	float:right;
+}
+/*site main navigation*/
+.nav {
+	margin-top:15px;
+	float:left;
+}
+.nav ul {
+	width:230px;
+	float:left;
+	list-style:none;
+	margin:0;
+	padding:0;
+	font-size:18px;
+}
+.nav li {
+	padding:5px;
+	text-decoration:none;
+}
+.nav li a:link {
+	text-decoration:none;
+	color:#000;
+}
+.nav li a:hover {
+	text-decoration:underline;
+	color:#000;
+}
+.nav li a:visited {
+	text-decoration:none;
+	color:#000;
+}
+/*main content*/
+h2 {
+	color: #0061a9;
+	font-size: 1.5em;
+}
+.clear {
+	height:15px;
+	width:auto;
+}
+h1, .subheader {
+	text-align:right;
+	clear:both;
+	width:970px;
+	text-transform:uppercase;
+}
+#article {
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+/*secondary navigation*/
+#column02 {
+	/*background-color:#333;*/
+	padding:4px;
+	height:auto;
+	width:100px;
+	float:top;
+	/*text-transform:capitalize;
+	-Moz-Border-Radius:4px;
+	-Webkit-Border-Radius:4px;*/
+	border-top:#000 2px solid;
+	border-bottom:#000 2px solid;
+	text-align:left;
+}
+#column02 ul {
+	list-style:square;
+	list-style-position:inside;
+	width:auto;
+	height:auto;
+}
+#column02 li {
+	font-weight:bold;
+	color:#FFF;
+}
+#column02 li a:link {
+	text-decoration:none;
+	color:#FFF;
+}
+#column02 li a:hover {
+	text-decoration:none;
+	color:#FFF;
+}
+#column02 li a:visited {
+	text-decoration:none;
+	color:#FFF;
+}
+.back {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-weight:bold;
+	float:right;
+}
+/*footer*/
+#footer {
+	clear:both;
+	height:20px;
+	border-top:#000 2px solid;
+	width:auto;
+	height:auto;
+	padding:5px;
+	text-align:center;
+	font-weight:bold;
+}
+#footer div {
+	clear:both;
+	margin-top:10px;
+}
+#footer ul {
+	width:150px;
+	text-align:left;
+	float:left;
+	margin-left:10px;
+}
+#main_footer_nav {
+	border-bottom:#000 2px solid;
+	text-align:left;
+}
+#footer a:link {
+	text-decoration:none;
+	color:#fff;
+}
+#footer a:hover {
+	text-decoration:none;
+	color:#fff;
+}
+#footer a:visited {
+	text-decoration:none;
+	color:#fff;
+}
+
+/*accordian*/
+.wrapper
+{
+	margin-top:-5px;
+}
+.accordionButton {
+	float: left;
+	_float: none;  /* Float works in all browsers but IE6 */
+	cursor: pointer;
+	width:200px;
+	text-align:left;
+	font-size:18px;
+	color:#000;
+	margin:5px 0 5px 0px;
+}
+.accordionContent {
+	width: 200px;
+	float: left;
+	_float: none; /* Float works in all browsers but IE6 */
+	background: #fff;
+}
+/***********************************************************************************************************************
+
+EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
+
+************************************************************************************************************************/
+
+ 
+
+.on {
+	background:#003e7e;
+	color:#fff;
+}
+.over {
+	background: #CCCCCC;
+}
