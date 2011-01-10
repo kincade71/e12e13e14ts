@@ -10,8 +10,7 @@ $query ="CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `use` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT 'page',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `category` (`category`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='a single table to refrence all the categories';";
 
 $result = mysql_query($query);
