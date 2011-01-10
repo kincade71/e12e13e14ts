@@ -207,12 +207,12 @@ echo'</div>
 	$style = file_get_contents('../css/style.css');
 	$page = file_get_contents('../index.php');
 	if ($p == "2"){
-	  echo '<form action="update_master_css.php" method="post">
+	  echo '<form action="update/update_master_css.php" method="post">
 	  <textarea name="css" id="code" rows="23" cols="60">'.$style.'</textarea><br/>
 	  <input type="submit" value="update"> <input type="button" value="cancel" onclick="window.location=\'designer.php\'"/>
 	  </form>';
 	}elseif ($p == "3"){
-	  echo '<form action="update_master_index.php" method="post">
+	  echo '<form action="update/update_master_index.php" method="post">
 	  <textarea name="index" id="code" rows="23" cols="60">'.$page.'</textarea><br/>
 	  <input type="submit" value="update"> 	  <input type="button" value="cancel" onclick="window.location=\'designer.php\'"/> 
 	  </form>';
