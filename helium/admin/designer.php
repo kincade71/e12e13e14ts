@@ -190,12 +190,19 @@ echo'</div>
   </div>
 </div>
 <div style="width:456px; min-height:500px; float:left;">
-  <form action="designer.php" method="post">
+  <form action="designer.php" method="POST">
     <table>
       <tr >
         <td style=" padding:4px;"><select name="p" style="float:left; width:380px;">
             <!--<option value="2">style.css</option>-->
             <option value="3">index.php</option>
+                  <?php  $result = mysql_query('SELECT * FROM `categories` WHERE `use` = \'userpage\'');
+while($row = mysql_fetch_array($result))
+  {
+	  $fileName = $row['category'];
+  echo'<option value="'.$row['category'].'">'.$row['category'].'.php</option>';
+  }
+  ?>
             <option value="4">create custom js</option>
           </select></td>
         <td style=" padding:4px;"><input type="submit" value="Go" style="height:35px;width:55px;"/></td>
@@ -204,11 +211,14 @@ echo'</div>
   </form>
   <?php
 	$p = $_REQUEST['p'];
-	$style = file_get_contents('../css/style.css');
+	if($fileName){
+	$style = file_get_contents('../'.$fileName.'.php');
+	}
 	$page = file_get_contents('../index.php');
-	if ($p == "2"){
-	  echo '<form action="update/update_master_css.php" method="post">
+	if ($p ==  $fileName){
+	  echo '<form action="update/update_user_file.php" method="post">
 	  <textarea name="css" id="code" rows="23" cols="60">'.$style.'</textarea><br/>
+	  <input type="hidden" value="'.$fileName.'" name="fileName"/>
 	  <input type="submit" value="update"> <input type="button" value="cancel" onclick="window.location=\'designer.php\'"/>
 	  </form>';
 	}elseif ($p == "3"){
