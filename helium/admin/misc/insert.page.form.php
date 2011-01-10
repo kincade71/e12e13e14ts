@@ -25,4 +25,4 @@
 			 };?>type="submit" value="add page" style="float:right;" /></td>
     </tr>
   </table>
-</form>
+</form>l
