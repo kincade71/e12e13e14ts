@@ -158,6 +158,12 @@ echo'<li><a href="ecom.php">ecom</a></li>';
       include("misc/nav.form.php");
     echo'</div>
   </div>
+   <div class="accordionButton" >add category</div>
+  <div class="accordionContent">
+    <div>';
+      include("misc/insert.category.form.php");
+    echo'</div>
+  </div>
   <div class="accordionButton" >add page</div>
   <div class="accordionContent">
   <div>';

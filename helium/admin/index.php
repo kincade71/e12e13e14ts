@@ -196,12 +196,19 @@ echo'<li><a href="ecom.php">ecom</a></li>';
       <?php include("misc/nav.form.php"); ?>
     </div>
   </div>
+  <div class="accordionButton" >add category</div>
+  <div class="accordionContent">
+    <div>
+      <?php include("misc/insert.category.form.php"); ?>
+    </div>
+  </div>
   <div class="accordionButton" >add page</div>
   <div class="accordionContent">
   <div>
   <?php include("misc/insert.page.form.php"); ?>
 </div>
 </div>
+
 </div>
 </li>
 </ul>

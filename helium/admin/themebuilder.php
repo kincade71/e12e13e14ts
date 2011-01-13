@@ -153,6 +153,12 @@ echo'<li><a href="ecom.php">ecom</a></li>';
       include("misc/nav.form.php");
     echo'</div>
   </div>
+   <div class="accordionButton" >add category</div>
+  <div class="accordionContent">
+    <div>';
+       include("misc/insert.category.form.php");
+    echo'</div>
+  </div>
   <div class="accordionButton" >add page</div>
   <div class="accordionContent">
   <div>';
@@ -198,7 +204,7 @@ echo'</div>
 	if ($p == "2"){
 	  echo '<form action="themedevarea/newtheme.php" method="post">
 	  Theme Name<input type="text" name="themename" size="65">
-	  <textarea name="css" id="code" rows="23" cols="60">'.file_get_contents("../css/style.css").'</textarea><br/>
+	  <textarea name="css" id="code" rows="23" cols="60">'.file_get_contents(stripslashes("../css/style.css")).'</textarea><br/>
 	  <input type="submit" value="create theme"><input type="button" value="cancel" onclick="window.location=\'themebuilder.php\'">
 	  </form>';
 	}elseif ($p == "3"){
@@ -207,9 +213,9 @@ echo'</div>
 	  echo '';
 	  }elseif ($p == "5"){
 	$edit = $_GET['edit'];
-	$jsedit = file_get_contents("themedevarea/".$edit."/style.css");
+	$jsedit = file_get_contents(stripslashes("themedevarea/".$edit."/style.css"));
 	  echo '<form action="themedevarea/savecss.php" method="post" enctype="multipart/form-data">
-  <textarea name="editor1_content" id="code" rows="23" cols="60">'.$jsedit.'</textarea><br/>
+  <textarea name="editor1_content" id="code" rows="23" cols="60">'.stripslashes($jsedit).'</textarea><br/>
   
   <input name="filename" type="hidden" value="'.$edit.'" /> 
   
