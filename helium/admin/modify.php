@@ -200,10 +200,17 @@ echo'<li><a href="ecom.php">ecom</a></li>';
       </div>
     </div>
   </div>
-  <div class="accordionButton" >add to navigation</div>
+  
+  <div class="accordionButton" >add link</div>
   <div class="accordionContent">
     <div>
       <?php include("misc/nav.form.php"); ?>
+    </div>
+  </div>
+   <div class="accordionButton" >add category</div>
+  <div class="accordionContent">
+    <div>
+      <?php include("misc/insert.category.form.php"); ?>
     </div>
   </div>
   <div class="accordionButton" >add page</div>
@@ -268,6 +275,9 @@ while($row = mysql_fetch_array($result))
 	};
 	if ($p == "4"){
 	include("modify/faq.php");
+	};
+	if ($p == "5"){
+	include("modify/page.php");
 	};
 	if ($p == "6"){
 	include("modify/users.php");
