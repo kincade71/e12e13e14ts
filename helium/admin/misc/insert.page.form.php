@@ -3,13 +3,13 @@
   <tr><td></td></tr>
 
     <tr>
-      <td style="width:190px;">title of page/category: </td>
+      <td style="width:190px;">title of page: </td>
     </tr>
     <tr>
       <td ><input style="width:190px;" name="pagename" type="text" /></td>
     </tr>
         <tr>
-      <td>blank page
+      <td>copy current home page
       <label>
           <input type="radio" name="RadioGroup1" value="yes" id="RadioGroup1_0" />
           yes</label>
