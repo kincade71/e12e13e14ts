@@ -2,11 +2,28 @@
 include('../../config.php');
 $pagename = str_replace(" ","_",strtolower($_POST['pagename']));  
 $answer = $_POST['RadioGroup1'];
-
 if($answer == "yes"){
 	$myFileUrl = $pagename.".php?category=".$pagename."";
 	$newFile = "../../".$pagename.".php";
 	
+	$fh = fopen($newFile, 'w') or die("can't open file");
+$stringData = file_get_contents("../../index.php");
+fwrite($fh, $stringData);
+fclose($fh);
+
+				$query1 = 'INSERT INTO `categories` (`id`, `category`, `use`) VALUES (\'\', \''.$pagename.'\', \'userpage\')';
+				$result1 = mysql_query($query1);
+				
+				$query2 = "INSERT INTO navigation  SET text = '$pagename', url = '$myFileUrl', title = '$pagename', category = 'main' ";
+				$result2 = mysql_query($query2);
+				
+				$query3 = "INSERT INTO categories  SET category = '$pagename'";
+				$result3 = mysql_query($query3);
+				
+}else{	
+	$myFileUrl = $pagename.".php?category=".$pagename."";
+	$newFile = "../../".$pagename.".php";
+
 	$fh = fopen($newFile, 'w') or die("can't open file");
 $stringData = '<?php
 $config = "config.php";
@@ -705,15 +722,6 @@ fclose($fh);
 				$query3 = "INSERT INTO categories  SET category = '$pagename'";
 				$result3 = mysql_query($query3);
 								
-				
-}else{
-				$myFileUrl ="index.php?category=".$pagename."";
-
-				$query1 = "INSERT INTO categories  SET category = '$pagename'";
-				$result1 = mysql_query($query1);
-				
-				$query2 = "INSERT INTO navigation  SET text = '$pagename', url = '$myFileUrl', title = '$pagename', category = 'main' ";
-				$result2 = mysql_query($query2);
 }				
 header('Location:../index.php');
 ?>
