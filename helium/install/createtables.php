@@ -133,7 +133,9 @@ $result12 = mysql_query($query12);
 
 $query6 ="INSERT INTO `categories` (`id`, `category`, `use`) VALUES
 (1, 'main', 'nav'),
-(2, 'home', 'page');";
+(2, 'home', 'page'),
+(3, 'widebar', 'page'),
+(4, 'sidebar', 'page');";
 
 $result6 = mysql_query($query6);
 
