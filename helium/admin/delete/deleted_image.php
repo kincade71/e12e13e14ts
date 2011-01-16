@@ -8,7 +8,7 @@ while ($row = mysql_fetch_array($result_file))
 {
 	$file = $row['image'];
 }
-$newfile = strstr($file, 'u');
+$newfile = "../".strstr($file, 'u');
 
 unlink($newfile);
 
