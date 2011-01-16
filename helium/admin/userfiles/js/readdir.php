@@ -3,7 +3,7 @@
 $path ="userfiles/js/";
 
 $exceptions = array( "." , ".."   , "readdir.php",".DS_Store");
-echo"<ul>";
+echo"<ul style=\"width:100%;\">";
 // Open the folder 
 $dir_handle = @opendir($path) or die("Unable to open $path"); 
 // Loop through the files 
