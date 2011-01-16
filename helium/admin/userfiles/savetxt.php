@@ -1,5 +1,5 @@
 <?php 
-$content = $_POST['editor1_content']; 
+$content = stripcslashes($_POST['editor1_content']); 
 $file = $_POST['filename'];
 $type = ".js";
 
