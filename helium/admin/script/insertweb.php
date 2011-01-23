@@ -1,6 +1,6 @@
 <?php
 include("../../config.php");
-$article = $_POST['editor1_content'];
+$article = utf8_encode($_POST['editor1_content']);
 $title = $_POST['title'];
 $category = $_POST['category'];
 $month = date('m');
