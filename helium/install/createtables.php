@@ -17,12 +17,14 @@ $result = mysql_query($query);
 
 
 
-$query1 ="CREATE TABLE IF NOT EXISTS `content` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+$query1 ="CREATE TABLE `content` (
+  `id` int(11) NOT NULL auto_increment,
   `header` varchar(255) NOT NULL COMMENT 'the header or title of the article or content this is optional',
   `article` text NOT NULL,
   `category` varchar(255) NOT NULL COMMENT 'this determines what page the content/article will be displayed on',
-  PRIMARY KEY (`id`)
+  `month` varchar(2) NOT NULL,
+  `year` varchar(4) NOT NULL,
+  PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='content for each page the articles and other content';";
 
 $result1 = mysql_query($query1);
