@@ -604,7 +604,7 @@ while($row = mysql_fetch_array($result))
   </div>
   <!-- end #wrapper2 -->
   <div id="footer">
-<p> &copy; <?php echo date("Y"); ?> <?php echo $CFG->sitename?> | <a href="admin/">Login</a><br />
+<p> &copy;2010 - <?php echo date("Y"); ?> <?php echo $CFG->sitename?> | <a href="admin/">Login</a><br />
 <a href="http://www.e12e.net" target="_blank" style="border:none;"><span>Powered By: Helium&reg;</span></a> Current Theme: <?= $theme ?></p>  </div>
 </div>
 <!-- end #wrapper -->
