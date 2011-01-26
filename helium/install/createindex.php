@@ -377,10 +377,10 @@ $temp = $i;
 $i++;
 }
 if($temp>0){
-echo\'<a href="index.php?id=\'.$post[$temp-1].\'">Older</a>\';
+echo\'<a href="?id=\'.$post[$temp-1].\'">Older</a>\';
 }
 if($temp < sizeof($post)-1){
-echo\'<a href="index.php?id=\'.$post[$temp+1].\'" style="float:right;">Newer</a>\';
+echo\'<a href="?id=\'.$post[$temp+1].\'" style="float:right;">Newer</a>\';
   }
 }
 }elseif($category == "ecom"){
@@ -410,7 +410,7 @@ echo\'<ul id="applications" class="image-grid">\';
 while($row = mysql_fetch_array($result))
   {
   echo\'<li data-id="id-\'.$row[\'id\'].\'" data-type="\'.$row[\'dt\'].\'">
-    <a href="index.php?enum=\'.$row[\'id\'].\'">\'.$row[\'image\'].\'</a>
+    <a href="?enum=\'.$row[\'id\'].\'">\'.$row[\'image\'].\'</a>
     <strong>\'.$row[\'title\'].\'</strong>
     <span>\'.$row[\'other\'].\'</span>
   </li>\';
@@ -441,7 +441,7 @@ $result1 = mysql_query(\'SELECT * FROM ecom WHERE filter = "\'.$filter.\'"\');
 while($row1 = mysql_fetch_array($result1))
   {
 	  echo\'<li data-id="id-\'.$row1[\'id\'].\'" data-type="\'.$row1[\'dt\'].\'">
-    <a href="index.php?enum=\'.$row1[\'id\'].\'">\'.$row1[\'image\'].\'</a>
+    <a href="?enum=\'.$row1[\'id\'].\'">\'.$row1[\'image\'].\'</a>
     <strong>\'.$row1[\'title\'].\'</strong>
     <span id="button">\'.$row1[\'other\'].\'</span>
   </li>\'; 
@@ -477,7 +477,7 @@ while($row = mysql_fetch_array($result))
   {
 if ($num==$row[\'id\'])
 {
-echo"<h2>".$row[\'question\']."</h2>Date added: ".$row[\'date\']." Category: <a href=\"index.php?category=faq&cat=".$row[\'category\']."\" title=\"see all items in ".$row[\'category\']." topic\">".$row[\'category\']."</a><br/><br/><div id=\"faq\">".$row[\'answer\']."</div>";
+echo"<h2>".$row[\'question\']."</h2>Date added: ".$row[\'date\']." Category: <a href=\"?category=faq&cat=".$row[\'category\']."\" title=\"see all items in ".$row[\'category\']." topic\">".$row[\'category\']."</a><br/><br/><div id=\"faq\">".$row[\'answer\']."</div>";
 }
   }
 }elseif(isset($cat)){
@@ -487,14 +487,14 @@ $result = mysql_query("SELECT * FROM faq WHERE category = \'$cat\'");
 
 while($row = mysql_fetch_array($result))
   {
-  echo"<a href=\"index.php?category=faq&num=".$row[\'id\']."\" style=\" text-decoration:none;\">".$row[\'date\']."<h2>".$row[\'question\']."</h2></a>";
+  echo"<a href=\"?category=faq&num=".$row[\'id\']."\" style=\" text-decoration:none;\">".$row[\'date\']."<h2>".$row[\'question\']."</h2></a>";
   }
 }else{
 	//Default shows top five entries
 $result = mysql_query(\'SELECT * FROM faq LIMIT 0, 5\');
 while($row = mysql_fetch_array($result))
   {
-  echo"<a href=\"index.php?category=faq&num=".$row[\'id\']."\" style=\" text-decoration:none;\">".$row[\'date\']."<h2>".$row[\'question\']."</h2></a>";
+  echo"<a href=\"?category=faq&num=".$row[\'id\']."\" style=\" text-decoration:none;\">".$row[\'date\']."<h2>".$row[\'question\']."</h2></a>";
   }
   }
   echo\'</div>\';
@@ -525,7 +525,7 @@ elseif(isset($_GET[\'viewday\']))
 $result = mysql_query(\'SELECT * FROM content WHERE category ="\'.$category.\'" ORDER BY id DESC LIMIT 0, 5\');
 while($row = mysql_fetch_array($result))
   {
-  echo"<a href=\"index.php?id=".$row[\'id\']."\" class=\"article_title\"><h2 class=\"title\">".$row[\'header\']."</h2></a><div class=\"entry\">".substr($row[\'article\'],0,900)."<a href=\"index.php?id=".$row[\'id\']."\" style=\"float:right;\">More&hellip;</a></div>";
+  echo"<a href=\"?id=".$row[\'id\']."\" class=\"article_title\"><h2 class=\"title\">".$row[\'header\']."</h2></a><div class=\"entry\">".substr($row[\'article\'],0,900)."<a href=\"?id=".$row[\'id\']."\" style=\"float:right;\">More&hellip;</a></div>";
   }
   }
   ?>
@@ -544,7 +544,7 @@ while($row = mysql_fetch_array($result))
 		  $result = mysql_query(\'SELECT * FROM content WHERE category ="sidebar_item" ORDER BY "id" DESC LIMIT 1 \');
 while($row = mysql_fetch_array($result))
   {
-  echo"<li><h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"index.php?id=".$row[\'id\']."\" style=\"float:right;\">More&hellip;</a></p></li>";
+  echo"<li><h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"?id=".$row[\'id\']."\" style=\"float:right;\">More&hellip;</a></p></li>";
   }
   ?>
           <li>
@@ -577,21 +577,21 @@ while($row = mysql_fetch_array($result))
            $result = mysql_query(\'SELECT * FROM content WHERE category ="widebar" ORDER BY "id" DESC LIMIT 1 \');
 while($row = mysql_fetch_array($result))
   {
-  echo"<h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"index.php?id=".$row[\'id\']."\"style=\"float:right;\">More&hellip;</a></p>";
+  echo"<h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"?id=".$row[\'id\']."\"style=\"float:right;\">More&hellip;</a></p>";
   }
        echo\'   </div>
         <div id="colB">\';
            $result = mysql_query(\'SELECT * FROM content WHERE category ="widebar" ORDER BY "id" DESC LIMIT 1,1 \');
 while($row = mysql_fetch_array($result))
   {
-  echo"<h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"index.php?id=".$row[\'id\']."\"style=\"float:right;\">More&hellip;</a></p>";
+  echo"<h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"?id=".$row[\'id\']."\"style=\"float:right;\">More&hellip;</a></p>";
   }
           echo\'  </div>
         <div id="colC">\';
            $result = mysql_query(\'SELECT * FROM content WHERE category ="widebar" ORDER BY "id" DESC LIMIT 2,3 \');
 while($row = mysql_fetch_array($result))
   {
-  echo"<h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"index.php?id=".$row[\'id\']."\" style=\"float:right;\">More&hellip;</a></p>";
+  echo"<h3>".$row[\'header\']."</h3><p>".substr($row[\'article\'],0,200)." <a href=\"?id=".$row[\'id\']."\" style=\"float:right;\">More&hellip;</a></p>";
   }
        echo\'   </div>
         <div style="clear: both;">&nbsp;</div>
