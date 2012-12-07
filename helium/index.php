@@ -1,7 +1,7 @@
 <?php
 $config = "config.php";
 if (file_exists($config)) {
-    include("config.php");
+    include($config);
 } else {
     header("Location:install/install.php");
 }
